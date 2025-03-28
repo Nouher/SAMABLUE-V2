@@ -24,7 +24,7 @@ export default function Topbar() {
     
 
     return(
-        <div className=" bg-[#F6F7FB] px-10 flex justify-between" >
+        <div className=" bg-[#F6F7FB] px-10 flex justify-between relative z-20" >
             <div className="flex gap-x-2 my-1">
                 <Link href="https://www.facebook.com/samablue.ma" className="p-1  hover:text-[#4783C2] text-[#F6F7FB] text-[#587194c9] "><FacebookIcon/></Link>
                 <Link href="https://www.instagram.com/samablue.sarl" className="p-1 hover:text-[#4783C2]   text-[#F6F7FB] text-[#587194c9]"><InstagramIcon/></Link>
@@ -32,8 +32,8 @@ export default function Topbar() {
             </div>
             <div className="flex items-center">
                 <span className="flex p-1 rounded-lg ">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true" className="h-5 w-5 text-gray-600">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" aria-hidden="true" className="h-5 w-5 text-gray-600">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                     </svg>
                 </span>
                     <a href="tel:+212600846002" target="_blank" rel="noreferrer" className="ml-2 mr-5 font-medium text-gray-600 truncate cursor-pointer">
@@ -42,7 +42,7 @@ export default function Topbar() {
                     </a>
                         <hr className="w-[1px] h-[20px] bg-gray-600"/>
                         <span className="ml-5 flex p-1 rounded-lg ">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true" className="h-5 w-5 text-gray-600"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" aria-hidden="true" className="h-5 w-5 text-gray-600"><path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                         </span>
                         <a href="mailto: samablue@samablue.ma" target="_blank" rel="noreferrer" className="ml-2 font-medium text-gray-600 truncate cursor-pointer">
                                 <span className="md:hidden">Email</span><span className="hidden md:inline text-xs">samablue@samablue.ma</span></a>

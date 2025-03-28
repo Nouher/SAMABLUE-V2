@@ -17,18 +17,7 @@ import NavMenu from "./NavMenu";
 import Image from "next/image";
 import SamablueIcon from "../samablue-icon.svg";
 
-export const AcmeLogo = () => {
-  return (
-    <svg fill="none" height="36" viewBox="0 0 32 32" width="36">
-      <path
-        clipRule="evenodd"
-        d="M17.6482 10.1305L15.8785 7.02583L7.02979 22.5499H10.5278L17.6482 10.1305ZM19.8798 14.0457L18.11 17.1983L19.394 19.4511H16.8453L15.1056 22.5499H24.7272L19.8798 14.0457Z"
-        fill="currentColor"
-        fillRule="evenodd"
-      />
-    </svg>
-  );
-};
+
 export const FacebookIcon = () => {
   return (
     <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"><path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"></path></svg>
@@ -49,11 +38,11 @@ export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
-    {Name:"Accueil",url:""},
+    {Name:"Accueil",url:"/"},
     {Name:"Nouveautès",url:"news"},
     {Name:"À Propos",url:"about"},
     {Name:"Galerie",url:"gallery"},
-    {Name:"Contactez-Nous",url:"contact-us"},
+    {Name:"Contactez-Nous",url:"contact"},
   ];
 
   return (
@@ -67,23 +56,23 @@ export default function App() {
           <Image priority src={SamablueIcon} alt="samablue-logo"/>
         </NavbarBrand>
       </NavbarContent>
-        <div></div>
-      <NavbarContent className="hidden sm:flex  gap-7 mr-10" >
+      <NavbarContent className="hidden sm:flex sm:justify-between gap-7 mr-10 " >
         <NavbarBrand>
-            <Image priority src={SamablueIcon} alt="samablue-logo" className="max-w-[200px] mr-20"/>
+            <Image priority src={SamablueIcon} alt="samablue-logo" className="max-w-[200px] mr-40 "/>
         </NavbarBrand>
-      
-        {menuItems.map((item, index) => (
-          <NavbarItem key={`${item}-${index}`}>
-                <Link color="foreground" href={item.url} className="hover:text-blue-400 text-[#318CE7] uppercase">
-                    {item.Name}
-                </Link>
-            </NavbarItem>
-        ))}
+        <div className="flex gap-7">
+            {menuItems.map((item, index) => (
+              <NavbarItem key={`${item}-${index}`}>
+                    <Link color="foreground" href={item.url} className="hover:text-blue-400 font-medium text-lg text-sky-800 uppercase">
+                        {item.Name}
+                    </Link>
+                </NavbarItem>
+            ))}
+          </div>
 
         <Tooltip content={<NavMenu/>} placement="bottom-start" className="">
             <button
-            className="flex justify-center items-center hover:text-blue-400 uppercase text-[#318CE7]"
+            className="flex justify-center items-center hover:text-blue-400 uppercase font-medium text-lg text-sky-800"
             >
             Stockage
             <svg
@@ -104,7 +93,7 @@ export default function App() {
         </Tooltip>
         <Tooltip content={<NavMenu/>} placement="bottom-start" className="">
             <button
-            className="flex justify-center items-center hover:text-blue-400 w-[136px] uppercase text-[#318CE7]"
+            className="flex justify-center items-center hover:text-blue-400 w-[146px] uppercase font-medium text-lg text-sky-800"
             >
             Nos Produits
             <svg
@@ -125,7 +114,7 @@ export default function App() {
         </Tooltip>
             <Tooltip content={<NavMenu/>} placement="bottom-start" className="">
                 <button
-                className="flex justify-center items-center hover:text-blue-400 uppercase text-[#318CE7]"
+                className="flex justify-center items-center hover:text-blue-400 uppercase font-medium text-lg text-sky-800"
                 >
                 Services
                 <svg
