@@ -63,7 +63,7 @@ export default function App() {
         <div className="flex gap-7">
             {menuItems.map((item, index) => (
               <NavbarItem key={`${item}-${index}`}>
-                    <Link color="foreground" href={item.url} className="hover:text-blue-400 font-medium text-lg text-sky-800 uppercase">
+                    <Link color="foreground" href={item.url} className="hover:text-blue-400  text-lg text-sky-800 uppercase">
                         {item.Name}
                     </Link>
                 </NavbarItem>
@@ -72,7 +72,7 @@ export default function App() {
 
         <Tooltip content={<NavMenu/>} placement="bottom-start" className="">
             <button
-            className="flex justify-center items-center hover:text-blue-400 uppercase font-medium text-lg text-sky-800"
+            className="flex justify-center items-center hover:text-blue-400 uppercase  text-lg text-sky-800"
             >
             Stockage
             <svg
@@ -93,7 +93,7 @@ export default function App() {
         </Tooltip>
         <Tooltip content={<NavMenu/>} placement="bottom-start" className="">
             <button
-            className="flex justify-center items-center hover:text-blue-400 w-[146px] uppercase font-medium text-lg text-sky-800"
+            className="flex justify-center items-center hover:text-blue-400 w-[146px] uppercase  text-lg text-sky-800"
             >
             Nos Produits
             <svg
@@ -114,7 +114,7 @@ export default function App() {
         </Tooltip>
             <Tooltip content={<NavMenu/>} placement="bottom-start" className="">
                 <button
-                className="flex justify-center items-center hover:text-blue-400 uppercase font-medium text-lg text-sky-800"
+                className="flex justify-center items-center hover:text-blue-400 uppercase  text-lg text-sky-800"
                 >
                 Services
                 <svg
