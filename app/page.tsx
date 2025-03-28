@@ -3,7 +3,7 @@
 // import { Metadata } from "next";
 import bg from "../public/assets/imgs/bg.jpg";
 import img from "../public/img2.jpg";
-import map_img from "../public/assets/amcharts.pixelMap.png";
+import map_img from "../public/assets/worldmap.png";
 import { ArrowRight, AwardIcon, Brain, BriefcaseBusiness, Building2, ChartBarBigIcon, ClipboardCheckIcon, EarthIcon, Handshake, Lightbulb, MoveRight, Ruler, SlidersVerticalIcon, TimerIcon, UsersIcon, Wrench } from "lucide-react";
 import Image from "next/image";
 import { Button, Chip } from "@heroui/react";
