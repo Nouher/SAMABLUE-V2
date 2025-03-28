@@ -6,65 +6,47 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import Image from "next/image";
-import img from "../app/assets/imgs/bg.jpg";
-
-import { Mousewheel, Keyboard } from 'swiper/modules';
-
-
+import { Image } from "@heroui/react";
 
 const products = [
   {
     category: "Convoyeurs",
     title: "Convoyeurs À Chaîne CC",
     desc:"Transport horizontal/modulaire de grains et granulés avec plus de 50 ans d’expertise.",
-    image: "../app/assets/imgs/bg.jpg",
+    image: "../public/assets/Convoyeur-a-bande-8.png",
   },
   
   {
     category: "Convoyeurs",
     title: "Convoyeurs À Bande RBC",
     desc:"Transport longue distance avec faible consommation et prévention de contamination croisée.",
-    image: "../app/assets/imgs/bg.jpg",
+    image: "../public/assets/Convoyeur-a-bande-8.png",
   },
   
   {
     category: "Convoyeurs",
     title: "Élévateur À Godets BBE",
     desc:"Transport vertical sécurisé et hermétique, sans perte et facile à entretenir.",
-    image: "../app/assets/imgs/bg.jpg",
+    image:"../public/assets/Convoyeur-a-bande-8.png",
   },
   {
     category: "Convoyeurs",
     title: "Élévateur À Godets BBE",
     desc:"Transport vertical sécurisé et hermétique, sans perte et facile à entretenir.",
-    image: "../app/assets/imgs/bg.jpg",
+    image:"../public/assets/Convoyeur-a-bande-8.png",
   },
   {
     category: "Convoyeurs",
     title: "Élévateur À Godets BBE",
     desc:"Transport vertical sécurisé et hermétique, sans perte et facile à entretenir.",
-    image: "../app/assets/imgs/bg.jpg",
+    image:"../public/assets/Convoyeur-a-bande-8.png",
   },
-  {
-    category: "Convoyeurs",
-    title: "Élévateur À Godets BBE",
-    desc:"Transport vertical sécurisé et hermétique, sans perte et facile à entretenir.",
-    image: "../app/assets/imgs/bg.jpg",
-  },
-  {
-    category: "Convoyeurs",
-    title: "Élévateur À Godets BBE",
-    desc:"Transport vertical sécurisé et hermétique, sans perte et facile à entretenir.",
-    image: "../app/assets/imgs/bg.jpg",
-  },
-  
   
 ];
 
 export default function Slider() {
   return (
-    <div className="container p-10 w-full ">
+    <div className="container p-10 ">
       <div className="flex  items-center justify-center">
       </div>
 
@@ -74,21 +56,19 @@ export default function Slider() {
         spaceBetween={30}
         slidesPerView={4}
         navigation={true}
-        pagination={true}
+        pagination={false}
         mousewheel={true}
         keyboard={true}        
-        
-        modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-
-        className="mt-6 w-full h-[428px]"
+     
+        className="mt-6 w-full h-[420px]"
       >
         {products.map((product, index) => (
           <SwiperSlide key={index} className="">
-            <div className="shadow-lg rounded-lg overflow-hidden bg-gray- h-[360px]">
+            <div className="shad rounded-3xl overflow-hidden bg-gray- h-[420px] bg-blue- border-medium border-blue-100">
               <Image
-                src={img}
+                src={product.image}
                 alt={product.title}
-                className="w-full h-48 object-cover"
+                className="w-full h-64 object-cover"
               />
               <div className="p-4 text-center">
                 <p className="text-sm text-blue-500 font-semibold">

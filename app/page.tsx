@@ -1,13 +1,12 @@
 "use client"
 
 // import { Metadata } from "next";
-import bg from "./assets/imgs/bg.jpg";
-import img from "./assets/imgs/bg2.jpg";
-import map_img from "./assets/imgs/map.png";
-import { ArrowRight, AwardIcon, Brain, BriefcaseBusiness, Building2, ChartBarBigIcon, ClipboardCheckIcon, Clock1Icon, Handshake, Lightbulb, MessageCircle, Ruler, ServerCogIcon, SlidersVerticalIcon, Wrench } from "lucide-react";
+import bg from "../public/assets/imgs/bg.jpg";
+import img from "../public/img2.jpg";
+import map_img from "../public/assets/amcharts.pixelMap.png";
+import { ArrowRight, AwardIcon, Brain, BriefcaseBusiness, Building2, ChartBarBigIcon, ClipboardCheckIcon, EarthIcon, Handshake, Lightbulb, MoveRight, Ruler, SlidersVerticalIcon, TimerIcon, UsersIcon, Wrench } from "lucide-react";
 import Image from "next/image";
-import { Button } from "@heroui/react";
-import WorldMap from "@/components/WorldMap";
+import { Button, Chip } from "@heroui/react";
 import Slider from "@/components/Slider";
 // import Slider from "@/components/Slider";
 
@@ -38,11 +37,13 @@ import Slider from "@/components/Slider";
 //   ];
 
 export default function Home() {
+
+
   return (
     <div>
       <div className="relative bg-blue-950 md:h-[80vh]">
           <div className="absolute z-10">
-            <h1 className="text-[36px] tracking-tight font-extrabold text-white md:text-[70px] pt-[40px] md:pt-40 text-center " style={{ textShadow: "2px 4px 3px rgba(0,0,0,0.3)" }}>
+            <h1 className="text-[36px] tracking-tight font-extrabold text-blue-50 md:text-[70px] pt-[40px] md:pt-40 text-center " style={{ textShadow: "2px 4px 3px rgba(0,0,0,0.3)" }}>
                 La solution 360° pour le stockage de votre céréale
             </h1>
 
@@ -67,6 +68,8 @@ export default function Home() {
               className="movement-img h-[100vh] w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full "
               src={bg}
               alt="Silos"
+              placeholder="blur"
+              loading="lazy"
             />
           </div>
         </div>
@@ -85,12 +88,6 @@ export default function Home() {
               <h1 className="sm:text-4xl text-2xl font-bold title-font mb-2 text-[#318CE7]">
               Pourquoi Samablue ?
               </h1>
-              {/* <p className="lg:w-1/2 w-full leading-relaxed text-gray-500 text-lg">
-                <span className="text-[#318CE7] font-semibold	">SAMA</span>
-                <span className="text-[#E8BD5E] font-semibold	">BLUE </span>
-                possède une vaste expérience internationale dans la gestion de
-                grands projets avec un portefeuille complet pour la manutention.
-              </p> */}
               <hr className="my-4 mx-auto w-32 h-1 bg-blue-200 rounded border-0 md:my-2 " />
             </div>
 
@@ -169,7 +166,7 @@ export default function Home() {
 
         
 
-        <section className="bg-gray-100 py-10">
+        <section className="bg-gray-100 py-16">
           {/* <div className="py-8 h-28 bg- flex flex-col justify-center items-center ">
             <h1 className="text-[#318CE7]  font-bold text-4xl  p-7 ">Solutions Complètes pour le Stockage</h1>
             <div>
@@ -264,12 +261,12 @@ export default function Home() {
                 <Image
                   className="w-[28rem] h-[28rem] object-cover xl:w-[38rem] xl:h-[44rem] rounded-3xl relative right-[-50px] "
                   src={img}
-                  alt="example"
+                  alt=""
+                   loading="lazy"
                 />
               </div>
             </div>
 
-            <hr className="border-gray-200 my-12 " />
 
             <div className="grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
               
@@ -280,13 +277,18 @@ export default function Home() {
         {/* <div className="bg-[#2E4659] ">
           <WorldMap />
         </div> */}
-        <section className="w-full flex flex-col justify-center items-center">
+        
+        <section className="w-screen flex flex-col justify-center items-center py-12 mt-10">
+        <h1 className="sm:text-4xl text-2xl font-bold title-font mb-2 text-[#318CE7]">
+              Our Products
+              </h1>
+              <hr className="my-4 mx-auto w-32 h-1 bg-blue-200 rounded border-0 md:my-2 " />
           <Slider />
         </section>
         
         <section>
-          <div className="bg-gray-100 ">
-            <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
+          <div className="bg-blue-50 mt-10">
+            <div className=" py-16 px-80 flex items-center justify-between ">
               <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 <span className="block ">EXPANSION GLOBALE DE</span>
                 <span className="block text-[#318CE7]">SAMABLUE</span>
@@ -296,11 +298,16 @@ export default function Home() {
                   <span className="inline-block w-1 h-1 ml-1 rounded-full bg-[#318CE7]"></span>
                 </div>
               </h2>
-              <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0 relative">
-                <Image src={map_img} alt="map" className=""/>
-                <div className="w-3 h-3 bg-[#318CE7] absolute top-[70px] left-[150px] md:top-[120px] md:left-[250px] rounded-full border-2 border-white hover:border-blue-900" />
-                <div className="w-16 h-5 bg-[#318CE7] absolute top-[45px] left-[125px] md:top-[95px] md:left-[225px] rounded border-2 border-white text-white text-xs flex justify-center">
-                  Afrique
+              <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0 relative ">
+                <div className="opacity-60">
+                  <Image src={map_img} alt="map" className="opacity-100"  loading="lazy" height={720} width={720} />
+                </div>
+                <div className="w-4 h-4 bg-[#318CE7] absolute top-[70px] left-[150px] md:top-[160px] md:left-[360px] rounded-full border-3 border-blue-500 animate-ping  opacity-80" />
+                <div className="w-4 h-4 bg-[#318CE7] absolute top-[70px] left-[150px] md:top-[160px] md:left-[360px] rounded-full border-3 " />
+                <div className=" w-16 h-5 absolute top-[45px] left-[125px] md:top-[130px] md:left-[336px] text-xs flex justify-center">
+                  <Chip variant="shadow" size="md" className="bg-[#318CE7] text-white border-2 border-white shadow-sm">
+                    Afrique
+                  </Chip>
                 </div>
               </div>
 
@@ -309,99 +316,138 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="text-gray-600 body-font">
-          <div className="container px-5 py-24 mx-auto">
-            <div className="flex flex-col text-center w-full mb-20">
+        <section className="text-gray-600 body-font my-20">
+          <div className="pb-24">
+            {/* <div className="flex flex-col text-center w-full mb-20">
               <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
                 {`Statistiques de l'année 2022`}
               </h1>
-            </div>
-            <div className="flex flex-wrap -m-4 text-center">
+            </div> */}
+            <div className="flex flex-wrap text-center justify-between items-center w-full ">
               <div className="p-4 md:w-1/6 sm:w-1/2 w-full">
-                <div className="border-2 border-gray-200 px-4 py-6 rounded-lg flex flex-col items-center">
-                  <BriefcaseBusiness className="text-[#318CE7] h-14 w-14 pb-1"/>
-                  <h2 className="title-font font-medium text-3xl text-gray-900">
-                    50
+                <div className="px-4 py-6 rounded-lg flex flex-col items-center">
+                  <div className="h-10 w-10 relative my-6">
+                    <div className="h-8 w-8 border-4 rounded-sm border-blue-100 absolute top-0 left-0"/>
+                    <BriefcaseBusiness className="text-[#318CE7] h-12 w-12 pb-1 absolute top-3 left-1"/>
+                  </div>
+                  <h2 className="title-font font-bold text-6xl text-gray-900">
+                    +50
                   </h2>
+                  <hr className=" w-16 h-1 bg-[#318CE7] rounded border-0 my-2" />
                   <p className="leading-relaxed">TRAVAILLEURS</p>
                 </div>
               </div>
               <div className="p-4 md:w-1/6 sm:w-1/2 w-full">
-                <div className="border-2 border-gray-200 px-4 py-6 rounded-lg ">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="text-[#318CE7] w-12 h-12 mb-3 inline-block"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
-                    <circle cx="9" cy="7" r="4"></circle>
-                    <path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"></path>
-                  </svg>
-                  <h2 className="title-font font-medium text-3xl text-gray-900">
-                    4.215K
+                <div className="px-4 py-6 rounded-lg flex flex-col items-center">
+                  <div className="h-10 w-10 relative my-6">
+                    <div className="h-8 w-8 border-4 rounded-sm border-blue-100 absolute top-0 left-0"/>
+                    <UsersIcon className="text-[#318CE7] h-12 w-12 pb-1 absolute top-3 left-1"/>
+                  </div>
+                  <h2 className="title-font font-bold text-6xl text-gray-900">
+                    +4,215K
                   </h2>
+                  <hr className=" w-16 h-1 bg-[#318CE7] rounded border-0 my-2" />
                   <p className="leading-relaxed">CLIENTS SATISFAITS</p>
                 </div>
               </div>
               <div className="p-4 md:w-1/6 sm:w-1/2 w-full">
-                <div className="border-2 border-gray-200 px-4 py-6 rounded-lg ">
-                  <div className="flex justify-center">
-                    <Clock1Icon className="text-[#318CE7] h-14 w-14 pb-1" />
+                <div className="px-4 py-6 rounded-lg flex flex-col items-center">
+                  <div className="h-10 w-10 relative my-6">
+                    <div className="h-8 w-8 border-4 rounded-sm border-blue-100 absolute top-0 left-0"/>
+                    <TimerIcon className="text-[#318CE7] h-12 w-12 pb-1 absolute top-3 left-1"/>
                   </div>
-                  <h2 className="title-font font-medium text-3xl text-gray-900">
-                    51 ANS
+                  <h2 className="title-font font-bold text-6xl text-gray-900">
+                    +51Ans
                   </h2>
+                  <hr className=" w-16 h-1 bg-[#318CE7] rounded border-0 my-2" />
                   <p className="leading-relaxed">{`DES ANNÉES D'EXPÉRIENCE`}</p>
                 </div>
               </div>
+
               <div className="p-4 md:w-1/6 sm:w-1/2 w-full">
-                <div className="border-2 border-gray-200 px-4 py-6 rounded-lg">
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="text-[#318CE7] w-12 h-12 mb-3 inline-block"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                  </svg>
-                  <h2 className="title-font font-medium text-3xl text-gray-900">
-                    45
+                <div className="px-4 py-6 rounded-lg flex flex-col items-center">
+                  <div className="h-10 w-10 relative my-6">
+                    <div className="h-8 w-8 border-4 rounded-sm border-blue-100 absolute top-0 left-0"/>
+                    <EarthIcon className="text-[#318CE7] h-12 w-12 pb-1 absolute top-3 left-1"/>
+                  </div>
+                  <h2 className="title-font font-bold text-6xl text-gray-900">
+                    +45
                   </h2>
+                  <hr className=" w-16 h-1 bg-[#318CE7] rounded border-0 my-2" />
                   <p className="leading-relaxed">PAYS</p>
                 </div>
               </div>
+
               <div className="p-4 md:w-1/6 sm:w-1/2 w-full">
-                <div className="border-2 border-gray-200 px-4 py-6 rounded-lg ">
-                  <div className="flex justify-center">
-                    <ChartBarBigIcon className="text-[#318CE7] h-14 w-14 pb-1" />
+                <div className="px-4 py-6 rounded-lg flex flex-col items-center">
+                  <div className="h-10 w-10 relative my-6">
+                    <div className="h-8 w-8 border-4 rounded-sm border-blue-100 absolute top-0 left-0"/>
+                    <ChartBarBigIcon className="text-[#318CE7] h-12 w-12 pb-1 absolute top-3 left-1"/>
                   </div>
-                  <h2 className="title-font font-medium text-3xl text-gray-900">
-                    10.2K
+                  <h2 className="title-font font-bold text-6xl text-gray-900">
+                    +10,2K
                   </h2>
+                  <hr className=" w-16 h-1 bg-[#318CE7] rounded border-0 my-2" />
                   <p className="leading-relaxed">{`TONNES D'ACIER`}</p>
                 </div>
               </div>
+
               <div className="p-4 md:w-1/6 sm:w-1/2 w-full">
-                <div className="border-2 border-gray-200 px-4 py-6 rounded-lg ">
-                  <div className="flex justify-center">
-                    <ServerCogIcon className="text-[#318CE7] h-14 w-14 pb-1" />
+                <div className="px-4 py-6 rounded-lg flex flex-col items-center">
+                  <div className="h-10 w-10 relative my-6">
+                    <div className="h-8 w-8 border-4 rounded-sm border-blue-100 absolute top-0 left-0"/>
+                    <ChartBarBigIcon className="text-[#318CE7] h-12 w-12 absolute top-3 left-1"/>
                   </div>
-                  <h2 className="title-font font-medium text-3xl text-gray-900">
-                    480
+                  <h2 className="title-font font-bold text-6xl text-gray-900">
+                    +480
                   </h2>
+                  <hr className=" w-16 h-1 bg-[#318CE7] rounded border-0 my-2" />
                   <p className="leading-relaxed">INSTALLATIONS</p>
                 </div>
               </div>
+
             </div>
           </div>
-        </section> 
+        </section>
+
+        <section className="bg-gray-50">
+          <div className="p-8 md:p-12 lg:px-16 lg:py-24">
+            <div className="mx-auto max-w-lg text-center">
+              <h2 className="text-2xl font-bold text-gray-900 md:text-3xl">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit
+              </h2>
+
+              <p className="hidden text-gray-500 sm:mt-4 sm:block">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae dolor officia blanditiis
+                repellat in, vero, aperiam porro ipsum laboriosam consequuntur exercitationem incidunt
+                tempora nisi?
+              </p>
+            </div>
+
+            <div className="mx-auto mt-8 max-w-xl">
+              <form action="#" className="sm:flex sm:gap-4">
+                <div className="sm:flex-1">
+                  <label for="email" className="sr-only">Email</label>
+
+                  <input
+                    type="email"
+                    placeholder="Email address"
+                    className="w-full rounded-md border-gray-200 bg-white p-3 text-gray-700 shadow-xs transition focus:border-white focus:ring-3 focus:ring-yellow-400 focus:outline-hidden"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="group mt-4 flex w-full items-center justify-center gap-2 rounded-md bg-blue-500 px-5 py-3 text-white transition focus:ring-3 focus:ring-yellow-400 focus:outline-hidden sm:mt-0 sm:w-auto"
+                >
+                  <span className="text-sm font-bold "> Sign Up </span>
+
+                  <MoveRight size={20}/>
+                </button>
+              </form>
+            </div>
+          </div>
+        </section>
       </div>
   );
 }

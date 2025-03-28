@@ -4,11 +4,12 @@ const Footer = () => {
   return (
     <>
       <footer
-        className="bg-white pt-7 "
-        style={{
-          background:
-            "linear-gradient(90deg, rgba(49,140,231,.5) 15%, rgba(254,207,103,.5) 85%)",
-        }}
+        className="bg-blue-100 pt-7 "
+        // style={{
+        //   background:
+        //     "linear-gradient(90deg, rgba(49,140,231,.5) 15%, rgba(254,207,103,.5) 85%)",
+        // }}
+
       >
         <div className="container px-6 py-4 mx-auto">
           <div className="lg:flex">

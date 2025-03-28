@@ -75,7 +75,7 @@ export default function App() {
       
         {menuItems.map((item, index) => (
           <NavbarItem key={`${item}-${index}`}>
-                <Link color="foreground" href={item.url} className="hover:text-blue-500 uppercase">
+                <Link color="foreground" href={item.url} className="hover:text-blue-400 text-[#318CE7] uppercase">
                     {item.Name}
                 </Link>
             </NavbarItem>
@@ -83,7 +83,7 @@ export default function App() {
 
         <Tooltip content={<NavMenu/>} placement="bottom-start" className="">
             <button
-            className="flex justify-center items-center hover:text-blue-400 uppercase"
+            className="flex justify-center items-center hover:text-blue-400 uppercase text-[#318CE7]"
             >
             Stockage
             <svg
@@ -104,7 +104,7 @@ export default function App() {
         </Tooltip>
         <Tooltip content={<NavMenu/>} placement="bottom-start" className="">
             <button
-            className="flex justify-center items-center hover:text-blue-400 w-[136px] uppercase"
+            className="flex justify-center items-center hover:text-blue-400 w-[136px] uppercase text-[#318CE7]"
             >
             Nos Produits
             <svg
@@ -125,7 +125,7 @@ export default function App() {
         </Tooltip>
             <Tooltip content={<NavMenu/>} placement="bottom-start" className="">
                 <button
-                className="flex justify-center items-center hover:text-blue-400 uppercase"
+                className="flex justify-center items-center hover:text-blue-400 uppercase text-[#318CE7]"
                 >
                 Services
                 <svg

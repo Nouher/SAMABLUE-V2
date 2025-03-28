@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -5,6 +6,8 @@ import Provider from "./Provider";
 import Navbar from "@/components/navbar";
 import Topbar from "@/components/Topbar";
 import Footer from "@/components/Footer";
+import { Suspense } from "react";
+import Loading from "@/components/loading";
 
 
 const geistSans = Geist({
@@ -23,25 +26,31 @@ export const metadata: Metadata = {
 };
 
 
+// const LazyComponent = dynamic(() => import("../components/LazyComponent "), {
+//   loading: () => <Loading />,
+// });
 
-export default function RootLayout({
+export default  function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
 
- 
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
         <Topbar/>
         <Navbar/>
-
-        <Provider >
-          {children}
-        </Provider>
+        <div className="min-h-screen">
+            <Provider >
+              <Suspense fallback={<Loading/>}>
+                {children}
+              </Suspense>
+            </Provider>
+        </div>
 
         <Footer/>
       </body>
