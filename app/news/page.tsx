@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import img1 from "../../public/images/img1.jpg";
+import NewsPage from "@/components/NewsPage";
 
 
 
@@ -22,9 +23,13 @@ export default function Home() {
         </div>
         <div className="relative z-10">
           <h1 className="text-5xl font-bold text-white shadow py-20 text-center">Actualités & Dernières Nouvelles</h1>
-          <div className="bg-white h-screen">
-
-
+          <div className=" bg-gray-50">
+            <div className="w-full flex justify-center items-center">
+              <p className="text-gray-600 text-sm text-center max-w-5xl pt-10 bg-yellow-50/30">
+              {`Notre page d’actualités vous informe sur les derniers événements, innovations et collaborations du secteur agroalimentaire. Retrouvez nos participations aux salons, conférences et rencontres professionnelles. Restez connectés pour suivre l’évolution du marché et nos engagements stratégiques.`}
+              </p>
+            </div>
+            <NewsPage/>
           </div>
         </div> 
     </div>
